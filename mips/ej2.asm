@@ -10,7 +10,7 @@ z:	.word # resultado
 
 # código
 	.text
-# cargando variables
+# cargando registros
 	lw $t0 x
 	lw $t1 y
 	j gcd

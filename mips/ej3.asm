@@ -6,7 +6,7 @@
 x:	.word 16 # dividendo
 y:	.word 3 # divisor
 
-# cargando variables
+# cargando registros
 	.text
 	lw $t0 x
 	lw $t1 y
