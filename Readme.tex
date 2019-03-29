@@ -11,6 +11,9 @@
 % vínculos
 \usepackage{hyperref}
 
+% manejo de ecuaciones
+\usepackage{amsmath}
+
 % texto del documento
 \begin{document}
     \title{
@@ -33,10 +36,10 @@
             \begin{enumerate}
                 \item ¿A qué valor tiende la serie?\\
                 Es la fórmula de Leibniz\cite{wolfram pi} para aproximar $\pi$.
-                \item ¿A cuántos dígitos se puede aproximar ese valor?\\
-                Como es precisión sencilla, se pueden aproximar hasta 23 bits
-                del valor en binario, que equivalen a 7 dígitos de precisión en
-                decimal\cite{ieee flot32 std}.
+                \item ¿A cuántos dígitos se puede aproximar ese valor?
+                %Como es precisión sencilla, se pueden aproximar hasta 23 bits
+                %del valor en binario, que equivalen a 7 dígitos de precisión en
+                %decimal\cite{ieee flot32 std}.
                 \item ¿Cuántas iteraciones son necesarias para llegar a esa
                 aproximación?
                 %Los primero 7 dígitos de $\pi$ son 3.141592\cite{pi dig}.\\
