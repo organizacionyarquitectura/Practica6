@@ -27,15 +27,15 @@ four:	.float 4.0
 	lwc1 $f7 four # const four : $f7
 
 # implementando serie	
-# serie (n,sum)
+# serie (m,sum)
 #  sum = 0
-#  for i in range(n):
-#    term = 1/(2*i + 1)
-#    if i % 2:
+#  for n in range(m):
+#    term = 1/(2*n + 1)
+#    if n % 2:
 #        sum -= term
 #    else:
 #        sum += term
-#   return (sum * 4)
+#  return (sum * 4)
 serie:	c.eq.s $f0 $f1 # bool = (n == m)
 	bc1t done # if bool then done, else continue
 	mul.s $f4 $f1 $f6 # term = 2*n
