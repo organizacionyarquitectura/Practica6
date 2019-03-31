@@ -12,7 +12,12 @@ y:	.word 3 # divisor
 	lw $t1 y
 	move $t2 $zero
 	
-# div
+# implementando la division
+# mydiv(x, y) 
+#   while (x >= y)
+#      x += y     
+#      t2 ++
+#   return t2, x
 mydiv:	blt $t0 $t1 done
 	sub $t0 $t0 $t1
 	addi $t2 $t2 1

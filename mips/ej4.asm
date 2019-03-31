@@ -4,7 +4,7 @@
 
 	.data
 # variables
-m:	.float 20.0 # num de iteraciones a ejecutar
+m:	.float 2886749.0 # num de iteraciones a ejecutar para obtener pi con 7 decimales
 aprox:	.float
 #constantes
 zero: 	.float 0.0
@@ -25,8 +25,17 @@ four:	.float 4.0
 	lwc1 $f5 one # const one : $f5
 	lwc1 $f6 two # const two : $f6
 	lwc1 $f7 four # const four : $f7
-	
-# serie
+
+# implementando serie	
+# serie (n,sum)
+#  sum = 0
+#  for i in range(n):
+#    term = 1/(2*i + 1)
+#    if i % 2:
+#        sum -= term
+#    else:
+#        sum += term
+#   return (sum * 4)
 serie:	c.eq.s $f0 $f1 # bool = (n == m)
 	bc1t done # if bool then done, else continue
 	mul.s $f4 $f1 $f6 # term = 2*n

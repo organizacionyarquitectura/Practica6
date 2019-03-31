@@ -2,7 +2,7 @@
 # calcule el máximo común divisor de dos números.
 # se usará el algoritmo de Euclides
 
-# variables
+# variables, aqui damos nuestros dos numeros
 	.data
 x:	.word 18 # primer número
 y:	.word 15 # segundo número
@@ -13,12 +13,11 @@ z:	.word # resultado
 # cargando registros
 	lw $t0 x
 	lw $t1 y
-	j gcd
 
 # implementando el algoritmo
-# gcd(a, b)
-#	if b == 0 return a
-#	else return gcd(b, a mod b)
+# gcd(x, y)
+#	if y == 0 return x
+#	else return gcd(y, x mod y)
 gcd:	beq $t1 $zero done
 	div $t0 $t1 
 	move $t0 $t1
