@@ -4,7 +4,7 @@
 
 	.data
 # variables
-m:	.float 250000.0 # num de iteraciones a ejecutar para obtener pi con 7 decimales
+m:	.float 250000.0 # num de iteraciones a ejecutar para obtener pi con 7 números
 aprox:	.float
 #constantes
 zero: 	.float 0.0
@@ -54,5 +54,5 @@ contin:	add.s $f1 $f1 $f5 # n++
 	j serie
 
 done:	mul.s $f3 $f3 $f7 # sum *= 4
-	swc1 $f3 aprox
+	swc1 $f3 aprox #resultado guardado en f3
 	 
