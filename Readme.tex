@@ -15,6 +15,10 @@
 % manejo de ecuaciones
 \usepackage{amsmath}
 
+% manejo de figuras
+\usepackage{graphicx}
+\usepackage{float}
+
 % texto del documento
 \begin{document}
     \title{
@@ -37,35 +41,59 @@
             \[4\cdot\sum_{n=0}^{m}{\frac{(-1)^{n}}{2n+1}}\]
             \begin{enumerate}
                 \item ¿A qué valor tiende la serie?\\
-                Es la fórmula de Leibniz\cite{wolfram pi} para aproximar $\pi$.\\
+                Es la fórmula de Leibniz\cite{wolfram pi} para aproximar $\pi$.
                 
-                \item ¿A cuántos dígitos se puede aproximar ese valor?
+                \item ¿A cuántos dígitos se puede aproximar ese valor?\\
                 Como es precisión sencilla, se pueden aproximar hasta 23 bits
                 del valor en binario, que equivalen a 7 dígitos de precisión en
-                decimal\cite{ieee flot32 std}.\\
-                
+                decimal\cite{ieee flot32 std}.
                 \item ¿Cuántas iteraciones son necesarias para llegar a esa
-                aproximación?               
-                Los primeros 7 dígitos de $\pi$ son 3.141592\cite{pi dig}.\\
-                Redondeando el número, se puede llegar a esa precisión después
-                de 1421283 iteraciones,  con la aproximación 3.141591950000691. \\
-                Sin redondear, se llega a el en 1530011 iteraciones con la
-                aproximación 3.141592000000233.\\
-                A partir de 2886750 iteraciones, se tiene que todos las
-                aproximaciones tienen los primeros 7 dígitos correctos.\\
-                Pudimos obtener estos valores a partir de programas creados en python bajo el nombre de leibniz en la carpeta python.
+                aproximación? \\
+                \begin{figure}[H]
+                    \centering
+                    \caption{Resultado de las aproximaciones}
+                    \label{appVal}
+                    \begin{tabular}{|l|l|}
+                        \hline
+                        Iteraciones & Aproximación \\ \hline
+                        50000       & 3.1415758    \\ \hline
+                        10000       & 3.1415758    \\ \hline
+                        250000      & 3.141592     \\ \hline
+                        500000      & 3.141594     \\ \hline
+                        1000000     & 3.1415954    \\ \hline
+                        3000000     & 3.1415963    \\ \hline
+                        4000000     & 3.1415966    \\ \hline
+                        5000000     & 3.1415966      \\ \hline
+                    \end{tabular}
+                \end{figure}
+                Los primeros 7 dígitos de $\pi$ son 3.141592\cite{pi dig}.
+                \begin{figure}[H]
+                    \centering
+                    \caption{Error por iteraciones al intentar aproximar 3.141592}
+                    \label{err}
+                    \includegraphics[scale=0.5]{python/error.png}
+                \end{figure}            
+                Se puede apreciar en \eqref{err} que se llega a un error de 0 en
+                250,000 iteraciones. Tanto antes como después de ese punto, la
+                aproximación empeora entre más se aleja de ese número.\\
+                Esto es de esperarse para iteraciones menores a 250,000, pero 
+                es inusual para valores mayores, pues entre mayor sea $m$ el valor
+                de la serie calculada debería ser más cercana al valor de la 
+                serie infinita.\\
+                Este error puede deberse a que al ser el $m$ grande, el término
+                $\frac{1}{2n+1}$ se vuelve más pequeño, por lo el erro en su
+                representación en punto flotante 32 bits puede aumentar.
+                Así, la aproximación empeora.
             \end{enumerate}
         }
         \item ¿Existe alguna diferencia en escribir programas en lenguaje 
         ensamblador comparado con escribir programas en lenguajes de alto nivel?\\
-        
         Escribir programas de alto nivel permite abstraer e implementar conceptos
         sin necesidad de tener en cuenta la traducción a código máquina, lo que
         hace que se pueda ignorar toda la parte física de la computadora.
         \item ¿En qué casos es preferible escribir programas en lenguaje 
         ensamblador y en qué casos es preferible hacerlo con un lenguaje de alto
         nivel?\\
-        
         Al depender de la arquitectura de la computadora, el código en lenguaje
         ensamblador no es portable, además de que requiere conocimiento de la
         máquina particular con la se está trabajando. Sin embargo, el código
