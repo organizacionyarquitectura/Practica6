@@ -7,6 +7,7 @@
 
 % idioma de los macros
 \usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
 
 % vínculos
 \usepackage{hyperref}
@@ -32,33 +33,39 @@
     \section{Preguntas}
     \begin{enumerate}
         \item {
+        	A partir del ejercicio 4:
             \[4\cdot\sum_{n=0}^{m}{\frac{(-1)^{n}}{2n+1}}\]
             \begin{enumerate}
                 \item ¿A qué valor tiende la serie?\\
-                Es la fórmula de Leibniz\cite{wolfram pi} para aproximar $\pi$.
+                Es la fórmula de Leibniz\cite{wolfram pi} para aproximar $\pi$.\\
+                
                 \item ¿A cuántos dígitos se puede aproximar ese valor?
-                %Como es precisión sencilla, se pueden aproximar hasta 23 bits
-                %del valor en binario, que equivalen a 7 dígitos de precisión en
-                %decimal\cite{ieee flot32 std}.
+                Como es precisión sencilla, se pueden aproximar hasta 23 bits
+                del valor en binario, que equivalen a 7 dígitos de precisión en
+                decimal\cite{ieee flot32 std}.\\
+                
                 \item ¿Cuántas iteraciones son necesarias para llegar a esa
-                aproximación?
-                %Los primero 7 dígitos de $\pi$ son 3.141592\cite{pi dig}.\\
-                %Redondeando el número, se puede llegar a esa precisión después
-                %de 1421283 iteraciones,  con la aproximación 3.141591950000691. \\
-                %Sin redondear, se llega a el en 1530011 iteraciones con la
-                %aproximación 3.141592000000233.\\
-                %A partir de 2886750 iteraciones, se tiene que todos las
-                %aproximaciones tienen los primeros 7 dígitos correctos.\\
+                aproximación?               
+                Los primeros 7 dígitos de $\pi$ son 3.141592\cite{pi dig}.\\
+                Redondeando el número, se puede llegar a esa precisión después
+                de 1421283 iteraciones,  con la aproximación 3.141591950000691. \\
+                Sin redondear, se llega a el en 1530011 iteraciones con la
+                aproximación 3.141592000000233.\\
+                A partir de 2886750 iteraciones, se tiene que todos las
+                aproximaciones tienen los primeros 7 dígitos correctos.\\
+                Pudimos obtener estos valores a partir de programas creados en python bajo el nombre de leibniz en la carpeta python.
             \end{enumerate}
         }
         \item ¿Existe alguna diferencia en escribir programas en lenguaje 
-        ensamblador comparado con escribir programas en leguajes de alto nivel?\\
+        ensamblador comparado con escribir programas en lenguajes de alto nivel?\\
+        
         Escribir programas de alto nivel permite abstraer e implementar conceptos
         sin necesidad de tener en cuenta la traducción a código máquina, lo que
         hace que se pueda ignorar toda la parte física de la computadora.
         \item ¿En qué casos es preferible escribir programas en lenguaje 
         ensamblador y en qué casos es preferible hacerlo con un lenguaje de alto
         nivel?\\
+        
         Al depender de la arquitectura de la computadora, el código en lenguaje
         ensamblador no es portable, además de que requiere conocimiento de la
         máquina particular con la se está trabajando. Sin embargo, el código
