@@ -4,7 +4,7 @@
 
 	.data
 # variables
-m:	.float 2886749.0 # num de iteraciones a ejecutar para obtener pi con 7 decimales
+m:	.float 250000.0 # num de iteraciones a ejecutar para obtener pi con 7 decimales
 aprox:	.float
 #constantes
 zero: 	.float 0.0
